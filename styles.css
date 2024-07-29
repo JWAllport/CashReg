@@ -1,0 +1,88 @@
+body {
+    background-color: gray;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#userCashlabel {
+    width:30%;
+}
+#ledScreen{
+    background-color: black;
+    border:7px solid lightblue;
+    height:35px;
+    width:175px;
+    color:green;
+    text-align: left;
+    padding-top: 10px;
+    padding-left:10px;
+    margin-right:30px;
+}
+#neck{
+    background-color: lightblue;
+    height:20px;
+    width:30px;
+    left: 10px;
+    margin-right:150px;
+}
+#body{
+    width:165px;
+    height:200px;
+    background-color: white;
+
+    padding: 10px 5px 5px 15px;
+
+    border-style:solid;
+    border-color: lightblue;
+    border-width:30px 15px 15px 100px;
+    border-radius: 25px 25px 0 0;
+    border: 10px 5px 15px 15px;
+}
+.leftCenter {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+}
+#purchase-btn:hover{
+    color:white;
+    background-color: black;
+    border-color:gray;
+    cursor:pointer;
+}
+#purchase-btn {
+    font-weight: bolder;
+    font-size:larger;
+    margin:10px;
+    color:gold;
+    background-color: gray;
+}
+#cash{
+    width:30%;
+    font-weight: bolder;
+    text-align: center;
+    font-size:larger;
+    margin:10px;
+    color:gold;
+    background-color: gray; 
+    border:3px inset black;
+}
+#userCashlabel {
+    width:30%;
+    font-weight: bolder;
+    text-align: center;
+    font-size:larger;
+    margin:10px;
+    color:gold;
+    background-color: gray;
+    border-radius:30px;
+    border-color:gray;
+    border-width:10px;
+    border-style:inset;
+
+    outline: 7px solid black;
+}
