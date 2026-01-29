@@ -1,33 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <Title>Register App</Title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register App</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
-<form onsubmit="return false">
-<div class="center">
-    <label id="userCashlabel" for="userCash" class="center">Enter Cash From the Customer</label>
-    <input id="cash" type="number" step=".01" required></input>
-</div>
-<div class="center" id="change-due"></div>
-<div class="center">
-    <button type ="submit" id="purchase-btn">Purchase</button>
-</div>
-</form>
-<div class="center">
-    <div id="ledScreen">$ 0.00</div>
-</div>
+<main class="page">
+  <header class="hero">
+    <h1>Cash Register Simulator</h1>
+    <p class="subhead">Change-making logic with a retro display.</p>
+  </header>
 
-<div class="leftCenter">
-    <div id="neck"></div>
-</div>
+  <section class="card">
+    <form onsubmit="return false" class="stack">
+      <label id="userCashlabel" for="customer-cash">Customer Cash</label>
+      <input id="customer-cash" type="number" step=".01" placeholder="0.00" required />
 
-<div class="center">
-    <div id="body"></div>
-</div>
+      <label id="itemPriceLabel" for="item-price">Item Price</label>
+      <input id="item-price" type="number" step=".01" value="19.50" required />
+
+      <button type="submit" id="purchase-btn">Purchase</button>
+    </form>
+
+    <div class="center status" id="change-due"></div>
+
+    <div class="center">
+      <div id="ledScreen">$ 0.00</div>
+    </div>
+
+    <div class="leftCenter">
+      <div id="neck"></div>
+    </div>
+
+    <div class="center">
+      <div id="body"></div>
+    </div>
+  </section>
+</main>
+
 <script type="text/javascript" src="script.js"></script>
-
 </body>
-
 </html>

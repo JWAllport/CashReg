@@ -1,88 +1,166 @@
+:root {
+  --bg: #0f1115;
+  --card: #161a22;
+  --accent: #6ad3ff;
+  --text: #e8eef6;
+  --muted: #9aa7b4;
+  --gold: #f1c64f;
+  --led: #2dff6a;
+  --danger: #ff6b6b;
+  --success: #2eea8b;
+}
+
+* { box-sizing: border-box; }
+
 body {
-    background-color: gray;
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #1a2030, var(--bg));
+  color: var(--text);
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subhead {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #222838;
+  border-radius: 16px;
+  padding: 24px;
+  width: min(520px, 95vw);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
 }
 
 .center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-#userCashlabel {
-    width:30%;
-}
-#ledScreen{
-    background-color: black;
-    border:7px solid lightblue;
-    height:35px;
-    width:175px;
-    color:green;
-    text-align: left;
-    padding-top: 10px;
-    padding-left:10px;
-    margin-right:30px;
-}
-#neck{
-    background-color: lightblue;
-    height:20px;
-    width:30px;
-    left: 10px;
-    margin-right:150px;
-}
-#body{
-    width:165px;
-    height:200px;
-    background-color: white;
 
-    padding: 10px 5px 5px 15px;
-
-    border-style:solid;
-    border-color: lightblue;
-    border-width:30px 15px 15px 100px;
-    border-radius: 25px 25px 0 0;
-    border: 10px 5px 15px 15px;
-}
 .leftCenter {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
 }
-#purchase-btn:hover{
-    color:white;
-    background-color: black;
-    border-color:gray;
-    cursor:pointer;
-}
-#purchase-btn {
-    font-weight: bolder;
-    font-size:larger;
-    margin:10px;
-    color:gold;
-    background-color: gray;
-}
-#cash{
-    width:30%;
-    font-weight: bolder;
-    text-align: center;
-    font-size:larger;
-    margin:10px;
-    color:gold;
-    background-color: gray; 
-    border:3px inset black;
-}
-#userCashlabel {
-    width:30%;
-    font-weight: bolder;
-    text-align: center;
-    font-size:larger;
-    margin:10px;
-    color:gold;
-    background-color: gray;
-    border-radius:30px;
-    border-color:gray;
-    border-width:10px;
-    border-style:inset;
 
-    outline: 7px solid black;
+#userCashlabel {
+  width: 100%;
+  font-weight: 600;
+  color: var(--text);
 }
+
+#cash,
+#customer-cash,
+#item-price {
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 10px 12px;
+  color: var(--text);
+  background-color: #0f131a;
+  border: 1px solid #2a3246;
+  border-radius: 10px;
+}
+
+#purchase-btn {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px 14px;
+  color: #121212;
+  background: linear-gradient(135deg, var(--gold), #ffe08a);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.2s ease;
+}
+
+#purchase-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(241, 198, 79, 0.25);
+}
+
+.status {
+  margin: 12px 0 4px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #10151e;
+  border: 1px dashed #2a3246;
+  color: var(--muted);
+  min-height: 28px;
+}
+
+.status.success { color: var(--success); border-color: rgba(46, 234, 139, 0.4); }
+.status.error { color: var(--danger); border-color: rgba(255, 107, 107, 0.4); }
+.status.open { color: var(--accent); }
+
+.display-row { display: flex; justify-content: center; margin: 12px 0 4px; }
+
+#ledScreen {
+  background-color: #040606;
+  border: 2px solid #1a2a33;
+  height: 44px;
+  width: 220px;
+  color: var(--led);
+  text-align: right;
+  padding: 10px 12px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(45, 255, 106, 0.18);
+}
+
+#neck {
+  background-color: var(--accent);
+  height: 18px;
+  width: 36px;
+  margin: 12px 0 0;
+  border-radius: 6px;
+}
+
+#body {
+  width: 100%;
+  min-height: 180px;
+  background-color: #0f131a;
+  padding: 12px;
+  border: 1px solid #2a3246;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+#body #money {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-bottom: 1px solid #1f2535;
+  color: var(--text);
+}
+
+#body #money:last-child { border-bottom: none; }
